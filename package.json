@@ -1,13 +1,14 @@
 {
-  "name": "express-ws",
-  "version": "5.0.1",
+  "name": "express-ws-await",
+  "version": "5.0.3",
   "description": "WebSocket endpoints for Express applications",
-  "main": "index",
-  "module": "src/index",
+  "main": "index.js",
   "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel src/ -d lib/",
     "lint": "eslint src/"
   },
-  "author": "Henning Morud <henning@morud.org>",
+  "author": "Yann Briançon <briyan@sfr.fr>",
   "contributors": [
     "Jesús Leganés Combarro <piranna@gmail.com>",
     "Sven Slootweg <admin@cryto.net>",
@@ -15,11 +16,11 @@
     "Nicholas Schell <nschell@gmail.com>",
     "Max Truxa <dev@maxtruxa.com>",
     "Kræn Hansen <mail@kraenhansen.dk>",
-    "Alexis Tyler <xo@wvvw.me>"
+    "Alexis Tyler <xo@wvvw.me>",
+    "Yann Briançon <briyan@sfr.fr>"
   ],
   "license": "BSD-2-Clause",
   "dependencies": {
-    "esm": "^3.0.84",
     "ws": "^7.4.6"
   },
   "peerDependencies": {
@@ -33,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HenningM/express-ws"
+    "url": "https://github.com/yannbriancon/express-ws"
   },
   "keywords": [
     "express",
@@ -41,10 +42,12 @@
     "websocket"
   ],
   "bugs": {
-    "url": "https://github.com/HenningM/express-ws/issues"
+    "url": "https://github.com/yannbriancon/express-ws/issues"
   },
-  "homepage": "https://github.com/HenningM/express-ws",
+  "homepage": "https://github.com/yannbriancon/express-ws/",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.5.0",
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.12.0",
